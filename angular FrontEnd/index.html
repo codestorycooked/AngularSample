@@ -1,0 +1,44 @@
+<html ng-app="DemoApp">
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/DemoController.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="row">
+        <div ng-controller="DemoAppController as vm" class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label >First Name</label>
+                    <input type="text" class="form-control"  ng-model="vm.postDataModel.FirstName"  placeholder="First Name">
+                </div>
+                   <div class="form-group">
+                    <label >Age</label>
+                    <input type="number" class="form-control" ng-model="vm.postDataModel.Age"  placeholder="Age">
+                </div>
+               
+                
+                <button type="submit" ng-click="vm.postData()" class="btn btn-default">Submit</button>
+            </form>
+           
+            <div class="col-md-6">
+                <table class="table" ng-if="vm.recievedResponse">
+
+                    <tr ng-repeat="item in  vm.recievedResponse.data track by $index">
+                        <td>{{item.FirstName}}</td>
+                        <td>{{item.Age}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
