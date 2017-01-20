@@ -1,4 +1,4 @@
 # AngularSample
 
-Alpa create data folder to c: drive  like this 
+#Alpa create data folder to c: drive  like this 
 C:\data
